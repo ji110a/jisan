@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Personal Website</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    .login {
+      background: #222;
+      color: #fff;
+      padding: 30px;
+      text-align: center;
+    }
+    .login input {
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    img {
+      max-width: 150px;
+      border-radius: 100px;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+    .social a {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Login Section -->
+  <div class="login">
+    <h2>Login</h2>
+    <form onsubmit="return login()">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <br>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <!-- Personal Info -->
+  <div class="container" id="profile" style="display: none;">
+    <img src="your-photo.jpg" alt="Your Photo">
+    <h1>তোমার নাম এখানে</h1>
+    <p><strong>পরিচয়:</strong> আমি একজন প্রযুক্তিপ্রেমী, ওয়েব ডেভেলপার এবং শিক্ষার্থী।</p>
+
+    <h2>📌 পছন্দের কাজ</h2>
+    <ul>
+      <li><a href="https://your-project-link1.com" target="_blank">👉 প্রজেক্ট ১</a></li>
+      <li><a href="https://your-project-link2.com" target="_blank">👉 প্রজেক্ট ২</a></li>
+    </ul>
+
+    <h2>🔗 Social Media</h2>
+    <div class="social">
+      <a href="https://facebook.com/yourprofile" target="_blank">Facebook</a>
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      var user = document.getElementById('username').value;
+      var pass = document.getElementById('password').value;
+      if(user === 'Jisan' && pass === '1234') {
+        document.querySelector('.login').style.display = 'none';
+        document.getElementById('profile').style.display = 'block';
+        return false;
+      } else {
+        alert('Wrong username or password!');
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>
